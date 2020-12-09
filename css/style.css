@@ -76,3 +76,25 @@ button {
     background-color: #085394;
 }
 
+@media screen and (max-width: 500px){
+    #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    #containerButton{
+        width: 60vh;
+        height: 10vh;
+    }
+
+    #grid{
+        width: 60vh;
+        height: 60vh;
+    }
+
+    #grid div {
+        width: 19vh;
+        height: 19vh;
+    }
+}
