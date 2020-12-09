@@ -4,6 +4,8 @@ let button = document.getElementsByTagName("button");
 let token = 0;
 let altPlayer = 0;
 let secret = 0;
+let botIt = [4,2,6,8,0,1,3,5,7];
+
 
 /**
  *  stop right clic menu
@@ -166,15 +168,18 @@ function winner(win) {
  *  function for the turn of bot
  */
 function botPlay(){
-    for (let i = 0 ; i < box.length ; i++){
-        player2(i);
+    for (let i = 0; i < botIt.length ; i++)
+    if (box[botIt[i]].id === ""){
+        player2(botIt[i]);
     }
+
 }
 
 function botPlaySecret(){
-    for (let i = 0 ; i < box.length ; i++){
-        player2Secret(i);
-    }
+    for (let i = 0; i < botIt.length ; i++)
+        if (box[botIt[i]].id === ""){
+            player2Secret(botIt[i]);
+        }
 }
 
 /**
@@ -218,7 +223,7 @@ function player1 (i){
 function player1Secret (i){
     if (altPlayer === 0){
         if (box[i].id === ""){
-            box[i].id = "Beer";
+            box[i].id = "beer";
             box[i].style.backgroundColor = "#009d0e";
             box[i].innerHTML = "<i class=\"fas fa-beer\"></i>"
             setTimeout(testVictory,3000);
