@@ -50,14 +50,10 @@ body {
     height: 19vh;
     background-color: #dddddd;
     color: black;
-}
-
-#beer {
-    background-color: #009d0e;
-}
-
-#coffee {
-    background-color: #085394;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -67,13 +63,11 @@ button {
 #cross{
     background-image: url("../img/cross.png");
     background-size: cover;
-    background-color: #009d0e;
 }
 
 #round{
     background-image: url("../img/round.png");
     background-size: cover;
-    background-color: #085394;
 }
 
 @media screen and (max-width: 500px){
