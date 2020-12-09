@@ -67,7 +67,7 @@ for (let i = 0 ; i < button.length ; i++)
 function restart() {
     for (let i = 0 ; i < box.length ; i++)
     {
-        box[i].removeAttribute("id");
+        box[i].removeAttribute("class");
         box[i].removeAttribute("style");
         altPlayer = 0;
     }
@@ -79,21 +79,21 @@ function restart() {
 function testVictory(){
 
     for (let i = 0 ; i < 9 ; i = i+3 ){
-        if (box[i].id === box[i+1].id && box[i].id ===box[i+2].id){
-            winner(box[i].id);
+        if (box[i].className === box[i+1].className && box[i].className ===box[i+2].className){
+            winner(box[i].className);
         }
     }
     for (let i = 0 ; i < 3 ;  i++ ){
-        if (box[i].id === box[i+3].id && box[i].id ===box[i+6].id){
-            winner(box[i].id);
+        if (box[i].className === box[i+3].className && box[i].className === box[i+6].className){
+            winner(box[i].className);
         }
     }
 
-    if(box[0].id === box[4].id && box[0].id ===box[8].id){
-        winner(box[0].id);
+    if(box[0].className === box[4].className && box[0].className ===box[8].className){
+        winner(box[0].className);
     }
-    if(box[2].id === box[4].id && box[2].id ===box[6].id){
-        winner(box[2].id);
+    if(box[2].className === box[4].className && box[2].className ===box[6].className){
+        winner(box[2].className);
     }
 
     let nbId = 0;
@@ -132,10 +132,11 @@ function winner(win) {
  *  function for the turn of bot
  */
 function botPlay(){
-    for (let i = 0; i < botIt.length ; i++)
-        if (box[botIt[i]].id === ""){
+    for (let i = 0; i < botIt.length ; i++) {
+        if (box[botIt[i]].id === "") {
             player2(botIt[i]);
         }
+    }
 }
 
 /**
@@ -144,8 +145,8 @@ function botPlay(){
  */
 function player2 (i){
     if (altPlayer === 1) {
-        if (box[i].id === "") {
-            box[i].id = "round";
+        if (box[i].className === "") {
+            box[i].className = "round";
             box[i].style.backgroundColor = "#085394";
             setTimeout(testVictory,3000);
             altPlayer = 0;
@@ -155,8 +156,8 @@ function player2 (i){
 
 function player1 (i){
     if (altPlayer === 0){
-        if (box[i].id === ""){
-            box[i].id = "cross";
+        if (box[i].className === ""){
+            box[i].className = "cross";
             box[i].style.backgroundColor = "#009d0e";
             setTimeout(testVictory,3000);
             altPlayer = 1;
