@@ -84,15 +84,7 @@ function restart() {
 }
 
 function testVictory(){
-    let nbId = 0;
-    for (let i = 0 ; i < box.length ; i++) {
-        if (box[i].id != ""){
-            nbId += 1;
-        }
-    }
-    if (nbId === box.length){
-        winner("draw");
-    }
+
     if (box[0].id === box[1].id && box[0].id ===box[2].id){
         winner(box[0].id);
     }
@@ -116,6 +108,15 @@ function testVictory(){
     }
     if(box[2].id === box[5].id && box[2].id ===box[8].id){
         winner(box[2].id);
+    }
+    let nbId = 0;
+    for (let i = 0 ; i < box.length ; i++) {
+        if (box[i].id != ""){
+            nbId += 1;
+        }
+    }
+    if (nbId === box.length){
+        winner("draw");
     }
 }
 
