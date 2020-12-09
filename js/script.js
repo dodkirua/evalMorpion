@@ -36,12 +36,10 @@ for (let i = 0 ; i < button.length ; i++)
         switch (this.innerHTML){
             case "Human":
                 token = 0;
-                console.log(token);
                 restart();
                 break;
             case "Bot":
                 token = 1;
-                console.log(token);
                 restart();
                 break;
             case "Restart" :
