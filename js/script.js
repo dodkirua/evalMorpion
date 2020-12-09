@@ -17,14 +17,13 @@ for (let i = 0 ; i < box.length ; i++)
 
     });
 
-    box[i].addEventListener("dblclick", function (){
-        if (token === 0){
+   box[i].addEventListener("click", function (){
+        if (altPlayer === 0){
+            player1(i);
+        }
+        else{
             player2(i);
         }
-    });
-
-    box[i].addEventListener("click", function (){
-        player1(i);
         if (token === 1){
             botPlay();
         }
