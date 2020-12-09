@@ -124,7 +124,7 @@ function testVictory(){
 
     let nbId = 0;
     for (let i = 0 ; i < box.length ; i++) {
-        if (box[i].id != ""){
+        if (box[i].id !== ""){
             nbId += 1;
         }
     }
@@ -186,7 +186,7 @@ function player2 (i){
         if (box[i].id === "") {
             box[i].id = "round";
             box[i].style.backgroundColor = "#085394";
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 0;
         }
     }
@@ -198,7 +198,7 @@ function player2Secret (i){
             box[i].id = "coffee";
             box[i].style.backgroundColor = "#085394";
             box[i].innerHTML = "<i class=\"fas fa-coffee\"></i>"
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 0;
         }
     }
@@ -209,7 +209,7 @@ function player1 (i){
         if (box[i].id === ""){
             box[i].id = "cross";
             box[i].style.backgroundColor = "#009d0e";
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 1;
         }
     }
@@ -221,7 +221,7 @@ function player1Secret (i){
             box[i].id = "Beer";
             box[i].style.backgroundColor = "#009d0e";
             box[i].innerHTML = "<i class=\"fas fa-beer\"></i>"
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 1;
         }
     }
