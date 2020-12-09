@@ -1,6 +1,6 @@
 
 let box = document.getElementById("grid").getElementsByTagName("div");
-let button = document.geElementsByTagName("button");
+let button = document.getElementsByTagName("button");
 let token = 0;
 let altPlayer = 0;
 
@@ -97,7 +97,7 @@ function testVictory(){
 
     let nbId = 0;
     for (let i = 0 ; i < box.length ; i++) {
-        if (box[i].id != ""){
+        if (box[i].id !== ""){
             nbId += 1;
         }
     }
@@ -145,7 +145,7 @@ function player2 (i){
         if (box[i].id === "") {
             box[i].id = "round";
             box[i].style.backgroundColor = "#085394";
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 0;
         }
     }
@@ -156,7 +156,7 @@ function player1 (i){
         if (box[i].id === ""){
             box[i].id = "cross";
             box[i].style.backgroundColor = "#009d0e";
-            testVictory();
+            setTimeout(testVictory,3000);
             altPlayer = 1;
         }
     }
