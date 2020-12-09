@@ -3,6 +3,7 @@ let box = document.getElementById("grid").getElementsByTagName("div");
 let button = document.getElementsByTagName("button");
 let token = 0;
 let altPlayer = 0;
+let botIt = [4,2,6,8,0,1,3,5,7];
 
 /**
  *  stop right clic menu
@@ -131,9 +132,10 @@ function winner(win) {
  *  function for the turn of bot
  */
 function botPlay(){
-    for (let i = 0 ; i < box.length ; i++){
-        player2(i);
-    }
+    for (let i = 0; i < botIt.length ; i++)
+        if (box[botIt[i]].id === ""){
+            player2(botIt[i]);
+        }
 }
 
 /**
