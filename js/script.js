@@ -5,20 +5,17 @@ let token = 0;
 let altPlayer = 0;
 let secret = 0;
 
+/**
+ *  stop right clic menu
+ */
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
-button[2].addEventListener("dblclick", function (){
-    secret = 1;
-})
-
-button[0].addEventListener("dblclick", function (){
-    secret = 0;
-})
-
-for (let i = 0 ; i < box.length ; i++)
-{
+/**
+ * listener for grid
+ */
+for (let i = 0 ; i < box.length ; i++){
     box[i].addEventListener("contextmenu", function (){
         if (token === 0){
             if (secret === 0){
@@ -58,9 +55,10 @@ for (let i = 0 ; i < box.length ; i++)
         }
     });
 }
-
-for (let i = 0 ; i < button.length ; i++)
-{
+/**
+ * listener for button
+ */
+for (let i = 0 ; i < button.length ; i++){
     button[i].addEventListener("click", function (){
         switch (this.innerHTML){
             case "Human":
@@ -80,6 +78,17 @@ for (let i = 0 ; i < button.length ; i++)
     });
 }
 
+button[2].addEventListener("dblclick", function (){
+    secret = 1;
+})
+
+button[0].addEventListener("dblclick", function (){
+    secret = 0;
+})
+
+/**
+ *  reset the grid
+ */
 function restart() {
     for (let i = 0 ; i < box.length ; i++)
     {
@@ -90,6 +99,9 @@ function restart() {
     }
 }
 
+/**
+ *  function for the victory
+ */
 function testVictory(){
 
     for (let i = 0 ; i < 9 ; i = i+3 ){
@@ -121,6 +133,10 @@ function testVictory(){
     }
 }
 
+/**
+ * function for the winner message
+ * @param win
+ */
 function winner(win) {
     switch (win){
         case "cross":
@@ -146,6 +162,9 @@ function winner(win) {
     }
 }
 
+/**
+ *  function for the turn of bot
+ */
 function botPlay(){
     for (let i = 0 ; i < box.length ; i++){
         player2(i);
@@ -157,11 +176,28 @@ function botPlaySecret(){
         player2Secret(i);
     }
 }
+
+/**
+ * function for player turn
+ * @param i
+ */
 function player2 (i){
     if (altPlayer === 1) {
         if (box[i].id === "") {
             box[i].id = "round";
             box[i].style.backgroundColor = "#085394";
+            testVictory();
+            altPlayer = 0;
+        }
+    }
+}
+
+function player2Secret (i){
+    if (altPlayer === 1) {
+        if (box[i].id === "") {
+            box[i].id = "coffee";
+            box[i].style.backgroundColor = "#085394";
+            box[i].innerHTML = "<i class=\"fas fa-coffee\"></i>"
             testVictory();
             altPlayer = 0;
         }
@@ -175,18 +211,6 @@ function player1 (i){
             box[i].style.backgroundColor = "#009d0e";
             testVictory();
             altPlayer = 1;
-        }
-    }
-}
-
-function player2Secret (i){
-    if (altPlayer === 1) {
-        if (box[i].id === "") {
-            box[i].id = "coffee";
-            box[i].style.backgroundColor = "#085394";
-            box[i].innerHTML = "<i class=\"fas fa-coffee\"></i>"
-            testVictory();
-            altPlayer = 0;
         }
     }
 }
