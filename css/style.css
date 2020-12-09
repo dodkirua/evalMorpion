@@ -60,12 +60,12 @@ button {
     width: 15vh;
 }
 
-#cross{
+.cross{
     background-image: url("../img/cross.png");
     background-size: cover;
 }
 
-#round{
+.round{
     background-image: url("../img/round.png");
     background-size: cover;
 }
