@@ -11,15 +11,23 @@ document.addEventListener('contextmenu', function (event){
 for (let i = 0 ; i < box.length ; i++)
 {
     box[i].addEventListener("contextmenu", function (){
-        player2(i);
+        if (token === 0){
+            player2(i);
+        }
+
     });
 
     box[i].addEventListener("dblclick", function (){
-        player2(i);
+        if (token === 0){
+            player2(i);
+        }
     });
 
     box[i].addEventListener("click", function (){
         player1(i);
+        if (token === 1){
+            botPlay();
+        }
     });
 }
 
@@ -29,10 +37,12 @@ for (let i = 0 ; i < button.length ; i++)
         switch (this.innerHTML){
             case "Human":
                 token = 0;
+                console.log(token);
                 restart();
                 break;
             case "Bot":
                 token = 1;
+                console.log(token);
                 restart();
                 break;
             case "Restart" :
@@ -101,10 +111,9 @@ function winner(win) {
     }
 }
 
-function botPlay(i){
-    switch (box[i].id){
-        case "":
-
+function botPlay(){
+    for (let i = 0 ; i < box.length ; i++){
+        player2(i);
     }
 }
 
@@ -127,6 +136,5 @@ function player1 (i){
             testVictory();
             altPlayer = 1;
         }
-
     }
 }
