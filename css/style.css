@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#container {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#containerButton{
+    width: 60vh;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#grid{
+    width: 60vh;
+    height: 60vh;
+    background-color: #9fc5f8 ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#grid div {
+    width: 19vh;
+    height: 19vh;
+    background-color: #dddddd;
+    color: black;
+}
+
+#beer {
+    background-color: #009d0e;
+}
+
+#coffee {
+    background-color: #085394;
+}
+
+button {
+    width: 15vh;
+}
+
+#cross{
+    background-image: url("../img/cross.png");
+    background-size: cover;
+    background-color: #009d0e;
+}
+
+#round{
+    background-image: url("../img/round.png");
+    background-size: cover;
+    background-color: #085394;
+}
+
