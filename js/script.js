@@ -1,13 +1,19 @@
 
 let box = document.getElementById("grid").getElementsByTagName("div");
-let button = document.getElementsByTagName("button");
+let button = document.geElementsByTagName("button");
 let token = 0;
 let altPlayer = 0;
 
+/**
+ *  stop right clic menu
+ */
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
+/**
+ * listener for grid
+ */
 for (let i = 0 ; i < box.length ; i++)
 {
     box[i].addEventListener("contextmenu", function (){
@@ -30,6 +36,9 @@ for (let i = 0 ; i < box.length ; i++)
     });
 }
 
+/**
+ * listener for button
+ */
 for (let i = 0 ; i < button.length ; i++)
 {
     button[i].addEventListener("click", function (){
@@ -51,6 +60,9 @@ for (let i = 0 ; i < button.length ; i++)
     });
 }
 
+/**
+ *  reset the grid
+ */
 function restart() {
     for (let i = 0 ; i < box.length ; i++)
     {
@@ -60,6 +72,9 @@ function restart() {
     }
 }
 
+/**
+ *  function for the victory
+ */
 function testVictory(){
 
     for (let i = 0 ; i < 9 ; i = i+3 ){
@@ -91,6 +106,10 @@ function testVictory(){
     }
 }
 
+/**
+ * function for the winner message
+ * @param win
+ */
 function winner(win) {
     switch (win){
         case "cross":
@@ -108,12 +127,19 @@ function winner(win) {
     }
 }
 
+/**
+ *  function for the turn of bot
+ */
 function botPlay(){
     for (let i = 0 ; i < box.length ; i++){
         player2(i);
     }
 }
 
+/**
+ * function for player turn
+ * @param i
+ */
 function player2 (i){
     if (altPlayer === 1) {
         if (box[i].id === "") {
