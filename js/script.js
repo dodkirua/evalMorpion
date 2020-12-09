@@ -133,7 +133,7 @@ function winner(win) {
  */
 function botPlay(){
     for (let i = 0; i < botIt.length ; i++) {
-        if (box[botIt[i]].id === "") {
+        if (box[botIt[i]].className === "") {
             player2(botIt[i]);
         }
     }
