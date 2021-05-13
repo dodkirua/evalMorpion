@@ -40,8 +40,7 @@ for (let i = 0 ; i < box.length ; i++)
 /**
  * listener for button
  */
-for (let i = 0 ; i < button.length ; i++)
-{
+for (let i = 0 ; i < button.length ; i++){
     button[i].addEventListener("click", function (){
         switch (this.innerHTML){
             case "Human":
@@ -65,12 +64,11 @@ for (let i = 0 ; i < button.length ; i++)
  *  reset the grid
  */
 function restart() {
-    for (let i = 0 ; i < box.length ; i++)
-    {
+    for (let i = 0 ; i < box.length ; i++)    {
         box[i].removeAttribute("class");
         box[i].removeAttribute("style");
-        altPlayer = 0;
     }
+    altPlayer = 0;
 }
 
 /**
